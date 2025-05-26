@@ -10,7 +10,7 @@ deployBackend:
 	echo "$(tput setaf 2)Merging the latest changes...$(tput sgr0)"
 	git merge origin/main -m "Automerged by Makefile" && \
 	echo "$(tput setaf 2)Rebuilding the JAR file and docker...$(tput sgr0)"
-	./gradlew bootJar && \
+	bash ./gradlew bootJar && \
 	echo "$(tput setaf 2)Stopping the old docker container...$(tput sgr0)"
 	docker stop asert-api && \
 	echo "$(tput setaf 2)Removing the old docker container...$(tput sgr0)"
